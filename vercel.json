@@ -1,14 +1,15 @@
 {
     "$schema": "https://openapi.vercel.sh/vercel.json",
-    "functions": {
-      "public/index.php": {
-        "runtime": "@vercel/php"
-      }
-    },
-    "rewrites": [
+    "builds": [
       {
-        "source": "/(.*)",
-        "destination": "public/index.php"
+        "src": "public/index.php",
+        "use": "@vercel/php"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "public/index.php"
       }
     ]
   }
